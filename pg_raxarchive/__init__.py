@@ -17,7 +17,7 @@ Install using pip then:
 - Run ``pg_raxarchive download {basename} {path_to_file}`` to download an archived file.
 - Run ``pg_raxarchive cleanup {filename}`` to remove WAL files older than {filename}.
 
-Rackspace credential file follow pyrax format::
+Rackspace credential file follows pyrax format::
 
     [rackspace_cloud]
     username = YUOR_USERNAME_HERE
@@ -28,7 +28,7 @@ You can customize the region and the container name using:
 - ``pg_raxarchive --container CONTAINE_RNAME ...``
 - ``pg_raxarchive --region REGION_NAME ...``
 
-By default ``pg_raxarchive`` expect to be running inside rackspace network. If this is
+By default ``pg_raxarchive`` expects to be running inside rackspace network. If this is
 not your case or you want to be billed for some other reasons use ``pg_raxarchive --use-public``.
 
 
