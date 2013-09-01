@@ -9,6 +9,7 @@ setuptools.setup(
     name='pg_raxarchive',
     version=pg_raxarchive.__version__,
     author=pg_raxarchive.__author__,
+    author_email='maurizio@skicelab.com',
     description=pg_raxarchive.__doc__.splitlines()[0].strip(),
     long_description='\n'.join(pg_raxarchive.__doc__.splitlines()[1:]).strip(),
     url='https://github.com/duilio/pg_raxarchive',
