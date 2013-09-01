@@ -1,4 +1,5 @@
 d2to1==0.2.11
+docutils==0.11
 httplib2==0.8
 iso8601==0.1.4
 keyring==2.1.1

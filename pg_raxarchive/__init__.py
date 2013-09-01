@@ -1,9 +1,17 @@
 """Command line tool to handle Postgresql WAL archiving on Rackspace's cloudfiles.
 
+pg_raxarchive
+=============
+
+``pg_raxarchive`` is a command line tool to handle Postgresql WAL archiving on
+Rackspace's cloudfiles.
+
+
 Quick help
-==========
+----------
 
 Install using pip then:
+
 - Create a file ``/etc/pg_raxarchive.ini`` with rackspace credentials (see below).
 - Run ``pg_raxarchive upload {path_to_file} {basename}`` to upload archive a file.
 - Run ``pg_raxarchive download {basename} {path_to_file}`` to download an archived file.
@@ -16,6 +24,7 @@ Rackspace credential file follow pyrax format::
     api_key  = YOUR_API_KEY_HERE
 
 You can customize the region and the container name using:
+
 - ``pg_raxarchive --container CONTAINE_RNAME ...``
 - ``pg_raxarchive --region REGION_NAME ...``
 
@@ -23,10 +32,11 @@ By default ``pg_raxarchive`` expect to be running inside rackspace network. If t
 not your case or you want to be billed for some other reasons use ``pg_raxarchive --use-public``.
 
 
-More options
-------------
+More
+----
 
-Check ``pg_raxarchive --help`` to know more.
+* Run ``pg_raxarchive --help`` to know more.
+* Check the repository at https://github.com/duilio/pg_raxarchive/
 
 """
 __version__ = '1.0'
