@@ -1,8 +1,8 @@
-Postgres archiving tool for Rackspace
-=====================================
+Postgresql archiving tool for Rackspace
+=======================================
 
-`pg_raxarchive` it's an utility tool to manage WAL file archiving using Rackspace
-cloudfiles.
+`pg_raxarchive` it's an utility tool to manage Postgresql's WAL file archiving using
+Rackspace cloudfiles.
 
 Requirements
 ------------
