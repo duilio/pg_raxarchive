@@ -110,8 +110,14 @@ class PGRaxArchiver(object):
                 return s[:-3]
             return s
 
+        def normalize(name):
+            return name.partition('.')[0]
+
         uncompressed_names = {stripgz(k): k for k in names}
-        removing_names = [uncompressed_names[k] for k in uncompressed_names if k < filename]
+
+        filename = normalize(filename)
+        removing_names = [uncompressed_names[k] for k in uncompressed_names
+                          if normalize(k) < filename]
 
         for obj_name in removing_names:
             logging.debug('Removing file %s...', obj_name)
