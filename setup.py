@@ -11,6 +11,7 @@ setuptools.setup(
     author=pg_raxarchive.__author__,
     description=pg_raxarchive.__doc__.splitlines()[0].strip(),
     url='https://github.com/duilio/pg_raxarchive',
+    license='BSD',
 
     packages=['pg_raxarchive'],
     install_requires=REQUIRES,
@@ -19,5 +20,16 @@ setuptools.setup(
         'console_scripts': [
             'pg_raxarchive = pg_raxarchive:main'
             ],
-        }
+        },
+
+    classifiers=[
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Information Technology',
+        'Intended Audience :: System Administrators',
+        'Intended Audience :: Developers',
+        'Operating System :: POSIX',
+        'License :: OSI Approved :: BSD License',
+        'Programming Language :: Python :: 2.7',
+        'Topic :: Utilities',
+        'Topic :: Software Development :: Libraries :: Python Modules'],
 )
