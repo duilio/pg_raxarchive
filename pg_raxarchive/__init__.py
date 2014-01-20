@@ -39,7 +39,7 @@ More
 * Check the repository at https://github.com/duilio/pg_raxarchive/
 
 """
-__version__ = '1.0'
+__version__ = '1.1'
 __author__ = 'Maurizio Sambati'
 
 import sys
