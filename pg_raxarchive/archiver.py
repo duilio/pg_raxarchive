@@ -103,7 +103,7 @@ class PGRaxArchiver(object):
             fout.write(data)
 
     def cleanup(self, filename):
-        names = self.cnt_get_object_names()
+        names = self.cnt.get_object_names()
 
         def stripgz(s):
             if s.endswith('.gz'):
