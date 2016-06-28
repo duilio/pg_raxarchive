@@ -57,21 +57,21 @@ class PGRaxArchiver(object):
         self.cnt = self.cf.create_container(container_name)
 
     def upload(self, src_name, dst_name, compress=True):
-        if not compress:
+        if compress:
+            fout = NamedTemporaryFile(suffix='.gz', mode='wb', delete=False)
+            try:
+                fout.close()
+                logging.debug('Compressing file %s...', src_name)
+                with \
+                        open(src_name, 'rb') as fin, \
+                        closing(gzip.GzipFile(fout.name, mode='wb')) as gzout:
+                    for chunk in iterchunks(fin):
+                        gzout.write(chunk)
+                return self._upload(fout.name, dst_name + '.gz')
+            finally:
+                fout.unlink(fout.name)
+        else:
             self._upload(src_name, dst_name)
-
-        fout = NamedTemporaryFile(suffix='.gz', mode='wb', delete=False)
-        try:
-            fout.close()
-            logging.debug('Compressing file %s...', src_name)
-            with \
-                    open(src_name, 'rb') as fin, \
-                    closing(gzip.GzipFile(fout.name, mode='wb')) as gzout:
-                for chunk in iterchunks(fin):
-                    gzout.write(chunk)
-            return self._upload(fout.name, dst_name + '.gz')
-        finally:
-            fout.unlink(fout.name)
 
     def _upload(self, filename, obj_name):
         logging.debug('Uploading file %s...', obj_name)
